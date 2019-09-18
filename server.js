@@ -18,10 +18,10 @@ function sleep(time) {
 app.use(serve(__dirname + '/static/html'));
 app.use(async (ctx) => {
   let { url } = ctx.request;
-  const _timeArr = url.match(/atguigu-sleep-(\d+)(?=-)/);
+  const _timeArr = url.match(/sleep-(\d+)(?=-)/);
   let time = null;
   if (_timeArr) {
-    url = url.replace(/atguigu-sleep-\d+-/, '');
+    url = url.replace(/sleep-\d+-/, '');
     time = _timeArr[1];
   }
   const res = await new Promise(function(res, rej) {
